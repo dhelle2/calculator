@@ -1,0 +1,23 @@
+#include <stack>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  stack<int> st;
+
+  char in;
+
+  while(in != 'q') {
+    cin >> in;
+    //cout << isdigit(in) << endl;
+    if(isdigit(in)) st.push(in-'0');
+    if(in == '+') {
+      int first = st.top();
+      st.pop();
+      cout << (first + st.top()) << endl;
+      st.pop();
+    }  
+  }
+
+}

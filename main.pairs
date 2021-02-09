@@ -1,0 +1,42 @@
+#include <stack>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  stack<int> st;
+
+  char in;
+
+  while(in != 'q') {
+    cin >> in;
+    if(isdigit(in)) st.push(in-'0');
+    else if(in == 'q') continue;
+    else {
+     int first = st.top();
+     st.pop();
+     int second = st.top();
+     st.pop(); 
+     switch(in) {
+      case '+':
+       cout << first + second << endl;
+       break;
+      case '-':
+       cout << first - second << endl;
+       break;
+      case '*':
+       cout << first * second << endl;
+       break;
+      case '/':
+       cout << first / second << endl;
+       break;
+      case '%':
+       cout << first % second << endl;
+       break;
+      default:
+       cout << "operator unrecognized ... reenter last two operands.." << endl;
+     }// switch
+    }// else
+  }
+
+}

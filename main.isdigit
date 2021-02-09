@@ -1,0 +1,16 @@
+#include <stack>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  stack<int> st;
+
+  char in;
+
+  while(in != 'q') {
+    cin >> in;
+    cout << isdigit(in) << endl;
+  }
+
+}
